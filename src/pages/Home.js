@@ -1,21 +1,28 @@
 import Nav from "../components/Nav";
+import { useState } from "react";
 
 const Home = () => {
-    const authToken = true;
+    const [showModal, setShowModal] = useState(false);
+
+    const authToken = false;
     const handleClick = () => {
         console.log("clicked");
     }
 
     return(
-        <>
-            <Nav/>
+        <div className="overlay">
+            <Nav 
+                authToken={authToken}
+                showModal={showModal}
+                setShowModal={setShowModal}
+            />
             <div className="home">
                 <h1>Swipe Right</h1>
-                <button className="primart-button" onClick={handleClick}>
+                <button className="primary-button" onClick={handleClick}>
                     {authToken ? "Signout" : "Create Account"}
                 </button>
             </div>
-        </>
+        </div>
     );
 }
 
