@@ -1,20 +1,20 @@
 import TinderLogoColor from '../images/TinderLogoColor.png';
 
-const Nav = ( {authToken, showModal} ) => {
+const Nav = ({ authToken, minimal, setShowModal, showModal, setIsSignUp }) => {
     const handleClick = () => {
-        console.log("Log in");
-    }
+      setShowModal(true);
+      setIsSignUp(false);
+    };
 
     return(
         <nav>
             <div className="logo-container">
-                <img className="logo" src={TinderLogoColor}/>
+                <img className="logo" src={TinderLogoColor} alt="logo"/>
             </div>
-            {!authToken && 
+            {!authToken && !minimal &&
                 <button
                     className="nav-button"
                     onClick={handleClick}
-                    disabled={showModal}
                 >
                     Log in
                 </button>
