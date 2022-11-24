@@ -88,7 +88,11 @@ nav .logo-container .logo {
     width: 100vw;
     height: 100vh;
     position: fixed;
-    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(66,66,124,1) 35%, rgba(127,185,196,1) 100%);
+    background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0) 100%
+    )
 }
 
 .home {
